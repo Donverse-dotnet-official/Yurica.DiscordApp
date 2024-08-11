@@ -6,12 +6,9 @@ from DiscordClient import DiscordClient
 # Load the environment variables
 load_dotenv('./env/.env')
 
-# Create the Discord client
+# Create and start the Discord client
 client = DiscordClient(
     token=os.getenv('DISCORD_TOKEN'),
     shard_id=os.getenv('DISCORD_SHARD_ID'),
     shard_total=os.getenv('DISCORD_SHARD_TOTAL')
-)
-
-# Start the Discord client
-client.start()
+).start()

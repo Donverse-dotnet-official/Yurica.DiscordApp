@@ -2,6 +2,18 @@ from discord import Client, Intents
 from discord.app_commands import CommandTree
 
 class DiscordClient:
+    """
+    Discord client for the bot
+
+    Parameters
+    ----------
+    :param token: The Discord bot token
+    :type token: str
+    :param shard_id: The shard ID for the bot
+    :type shard_id: int | str
+    :param shard_total: The total number of shards for the bot
+    :type shard_total: int | str
+    """
     def __init__(
         self,
         token: str,
@@ -47,7 +59,13 @@ class DiscordClient:
         # Append application commands to the command tree
 
     def start(self):
+        """
+        Start the Discord client
+        """
         self.bot.run(self.token)
 
     def stop(self):
+        """
+        Stop the Discord client
+        """
         self.bot.close()
